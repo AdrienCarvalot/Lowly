@@ -1,0 +1,25 @@
+{
+  "name": "lowly",
+  "version": "1.0.0",
+  "description": "Lowly website",
+  "main": "index.js",
+  "scripts": {
+    "predeploy": "JEKYLL_ENV=production jekyll build",
+    "deploy": "gh-pages -d _site",
+    "dev": "jekyll serve",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AdrienCarvalot/Lowly.git"
+  },
+  "author": "Adrien Carvalot",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AdrienCarvalot/Lowly/issues"
+  },
+  "homepage": "https://github.com/AdrienCarvalot/Lowly#readme",
+  "dependencies": {
+    "gh-pages": "^4.0.0"
+  }
+}
