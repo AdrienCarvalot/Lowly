@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Lowly</title>
+  </head>
+  <body>
+{% include header.html %}
+{{ content }}
+{% include footer.html %}
+
+<script defer src="{{'/assets/vendor/jquery.min.js' | prepend: site.baseurl}}"></script>
+<script defer src="{{'/assets/vendor/popper.min.js' | prepend: site.baseurl}}"></script>
+<script defer src="{{'/assets/vendor/bootstrap.min.js' | prepend: site.baseurl}}"></script>
+</body>
+  <!-- Styles -->
+  <link href='{{ "/assets/css/main.css" | prepend: site.baseurl }}' rel="stylesheet">
+</html>
