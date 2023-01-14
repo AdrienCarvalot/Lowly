@@ -4,9 +4,10 @@
   "description": "Lowly website",
   "main": "index.js",
   "scripts": {
-    "predeploy": "JEKYLL_ENV=production jekyll build",
+    "copy-vendor": "bash copy_vendor.sh",
+    "dev": "npm run copy-vendor && jekyll serve",
+    "predeploy": "npm run copy-vendor && JEKYLL_ENV=production jekyll build",
     "deploy": "gh-pages -d _site",
-    "dev": "jekyll serve",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,6 +21,9 @@
   },
   "homepage": "https://github.com/AdrienCarvalot/Lowly#readme",
   "dependencies": {
-    "gh-pages": "^4.0.0"
+    "bootstrap": "^5.2.3",
+    "gh-pages": "^4.0.0",
+    "jquery": "^3.6.3",
+    "popper.js": "^1.16.1"
   }
 }
