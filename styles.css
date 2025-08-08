@@ -1,0 +1,408 @@
+/* ==========================================================================
+   Lowly Apps — Base theme (light by default) + dark toggle
+   ========================================================================== */
+
+:root{
+  /* LIGHT THEME (default) */
+  --bg: #ffffff;
+  --surface: #f6f6f7;
+  --text: #111114;
+  --muted: #5f5f66;
+  --accent: #FF9500;                 /* global accent (used in hero + contact) */
+  --ring: rgba(255,149,0,.25);
+  --card: #ffffff;                    /* card base in light */
+  --border: #0000;                    /* no hard separators */
+}
+
+[data-theme="dark"]{
+  --bg: #0a0a0a;
+  --surface: #0f0f11;
+  --text: #e8e8eb;
+  --muted: #b3b3b9;
+  --accent: #FF9500;
+  --ring: rgba(255,149,0,.35);
+  --card: #111115;                    /* card base in dark */
+  --border: #0000;
+}
+
+/* ==========================================================================
+   Layout reset
+   ========================================================================== */
+
+*{ box-sizing: border-box; }
+html, body{ height:100%; }
+html, body{ overflow-x: clip; }        /* page itself must never scroll horizontally */
+
+body{
+  margin:0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji';
+  line-height:1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.wrap{ max-width:1080px; margin:0 auto; padding:0 24px; }
+
+/* ==========================================================================
+   Header / Nav
+   ========================================================================== */
+
+.site-header{
+  position:sticky; top:0; z-index:60;
+  backdrop-filter:saturate(140%) blur(10px);
+  background: color-mix(in oklab, var(--bg) 82%, transparent);
+}
+.site-header .wrap{ display:flex; align-items:center; justify-content:space-between; height:64px; }
+
+.logo{ font-weight:700; font-size:20px; color:var(--text); text-decoration:none; letter-spacing:.2px; }
+.logo span{ opacity:.7; }
+
+.nav{ display:flex; align-items:center; gap:20px; }
+.nav a{
+  color:var(--text); opacity:.8; text-decoration:none;
+  border-bottom:1px solid transparent; padding-bottom:2px;
+}
+.nav a:hover{ border-bottom-color:var(--text); opacity:1; }
+
+/* Subtle orange sheen under the header */
+.site-header::after{
+  content:""; position:absolute; left:0; right:0; bottom:0; height:2px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  opacity:.35; pointer-events:none;
+}
+
+/* Theme toggle */
+.theme-toggle{
+  appearance:none; border:none; background:transparent; cursor:pointer;
+  width:36px; height:36px; border-radius:10px; display:grid; place-items:center;
+}
+.theme-toggle:hover{ background: color-mix(in oklab, var(--surface) 60%, transparent); }
+.theme-toggle svg{ width:20px; height:20px; fill: currentColor; color: var(--text); opacity:.9; }
+[data-theme="dark"] .icon-sun{ display:none; }
+[data-theme="light"] .icon-moon{ display:none; }
+
+/* ==========================================================================
+   Hero (headline area)
+   ========================================================================== */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 14vh 0 12vh;
+  background: linear-gradient(180deg, var(--surface), var(--bg) 40%);
+}
+
+/* More visible animated mesh background */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: -50% -50%;
+  background: radial-gradient(900px 900px at 20% 20%, #8900C9, transparent 50%),
+              radial-gradient(900px 900px at 80% 30%, #ff4d00cc, transparent 50%),
+              radial-gradient(900px 900px at 50% 80%, #ffb700cc, transparent 40%),
+              radial-gradient(900px 900px at 30% 60%, #ff9500cc, transparent 50%);
+  filter: blur(120px) saturate(160%);
+  animation: aurora-move 18s ease-in-out infinite alternate;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.9;
+}
+
+@keyframes aurora-move {
+  0%   { transform: translate(0%, 0%) scale(1); }
+  50%  { transform: translate(5%, -5%) scale(1.1); }
+  100% { transform: translate(-5%, 5%) scale(1); }
+}
+
+/* Hero inner content */
+.hero-inner {
+  position: relative;
+  text-align: center;
+  z-index: 2;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: hero-fade-in 1s ease forwards;
+  animation-delay: 0.5s;
+}
+
+.hero h1 {
+  font-size: clamp(32px, 6vw, 64px);
+  letter-spacing: -0.02em;
+  margin: 0 0 12px;
+}
+
+.subtitle {
+  font-size: clamp(16px, 2.4vw, 22px);
+  color: var(--muted);
+  margin: 0 0 28px;
+}
+
+/* CTA styling */
+.cta {
+  display: inline-block;
+  padding: 12px 18px;
+  border-radius: 14px;
+  background: var(--text);
+  color: var(--bg);
+  text-decoration: none;
+  font-weight: 700;
+  box-shadow: none;
+  border: 1px solid color-mix(in oklab, var(--text) 10%, transparent);
+  opacity: 0;
+  transform: translateY(10px);
+  animation: hero-cta-in 0.8s ease forwards;
+  animation-delay: 1.2s;
+}
+[data-theme="dark"] .cta {
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid color-mix(in oklab, var(--bg) 10%, transparent);
+}
+.cta.secondary {
+  background: transparent;
+  border: 1px solid color-mix(in oklab, var(--text) 10%, transparent);
+  color: var(--text);
+}
+.cta:hover{
+  transform: translateY(-1px);
+  background: inherit;
+  color: inherit;
+}
+.cta.secondary:hover {
+  background: color-mix(in oklab, var(--surface) 60%, transparent);
+}
+
+@keyframes hero-fade-in {
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes hero-cta-in {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================================================
+   Apps grid + card
+   ========================================================================== */
+
+/* Our Apps heading styling */
+#apps h2 {
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 700;
+  text-align: center;
+  margin: 0;
+  padding-top: 100px;
+  letter-spacing: -0.02em;
+}
+#apps h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--accent);
+  margin: 4px auto 0;
+  border-radius: 2px;
+}
+/* Separator below Our Apps */
+#apps{ 
+  position:relative;
+  padding-bottom: 120px; 
+}
+#apps::after{
+  content:"";
+  position:absolute;
+  left:0; right:0; bottom:0; height:1px;
+  background: linear-gradient(90deg, transparent,
+    color-mix(in oklab, var(--text) 10%, transparent),
+    transparent);
+  opacity:.6;
+}
+
+.apps-grid{
+  display:grid; gap:50px;
+  grid-template-columns:1fr;
+  margin-top:70px;
+}
+
+/* Card base */
+.apps-grid .card{
+  --app-accent: var(--accent);
+  --glow: color-mix(in oklab, var(--app-accent) 28%, transparent);
+  background:var(--card);
+  border-radius:20px;
+  padding:24px;
+  box-shadow: 0 2px 18px -8px color-mix(in oklab, var(--text) 6%, transparent);
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  transition: transform .3s ease, box-shadow .3s ease, background .3s ease;
+}
+
+/* Hover overlay effect */
+.apps-grid .card::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: radial-gradient(40% 60% at 0% 0%,
+    color-mix(in oklab, var(--app-accent) 22%, transparent), transparent 70%);
+  opacity: 0;
+  transition: opacity .3s ease;
+}
+
+.apps-grid .card:hover{
+  transform: translateY(-6px) scale(1.02);
+  background: color-mix(in oklab, var(--app-accent) 6%, var(--card));
+  box-shadow: 0 24px 55px -18px var(--glow);
+}
+
+.apps-grid .card:hover::after{
+  opacity: .45;
+}
+
+/* Header row */
+.card-head{
+  position: relative;
+  display:flex;
+  align-items:center;
+  gap:16px;
+  margin-bottom:20px;
+}
+
+/* Actions live inside the header, aligned to the right */
+.card .actions{
+  margin-left:auto;              /* pushes the button to the right edge */
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+/* App Store button font + size */
+.card .btn.primary{
+  padding:10px 14px;
+  font-size:14px;
+  border-radius:10px;
+  text-shadow:0 1px 2px rgba(0,0,0,.25);
+  letter-spacing: -0.02em;
+  font-family:-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', Helvetica, Arial, sans-serif;
+}
+
+/* Tighter title–subtitle stack in the app header */
+.card-head h3{
+  margin: 0;               /* was 0 0 6px */
+  line-height: 1.15;
+}
+
+.card h3{ margin:0 0 6px; font-size:20px; letter-spacing:-.01em; }
+.card p{ margin: 2px 0 0; color:var(--muted); }
+
+/* Icon styling */
+.icon{
+  width:84px; height:84px; border-radius:22%;
+  flex:0 0 84px; display:grid; place-items:center;
+  background: linear-gradient(135deg, color-mix(in oklab, var(--accent) 28%, var(--card)), var(--card));
+  color:white; font-weight:700; font-size:30px; overflow:hidden;
+}
+.icon img{ width:100%; height:100%; object-fit:cover; display:block; }
+
+/* ==========================================================================
+   Screenshot strip
+   ========================================================================== */
+
+.screens{
+  inline-size:100%; max-inline-size:100%;
+  display:flex; gap:12px; overflow-x:auto; overflow-y:hidden;
+  scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch;
+  overscroll-behavior-x: contain; contain:inline-size paint;
+  margin-top:20px;
+}
+
+.shot{
+  flex: 0 0 clamp(160px, 18vw, 260px);
+  aspect-ratio: 1179 / 2556; height:auto;
+  border-radius:18px; overflow:hidden; background:var(--surface);
+  scroll-snap-align:center;
+  box-shadow: 0 6px 16px -8px color-mix(in oklab, var(--text) 8%, transparent);
+  border: 1px solid color-mix(in oklab, var(--text) 8%, transparent);
+}
+.shot img{ width:100%; height:100%; object-fit:cover; display:block; }
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+
+.btn{ border:0; text-decoration:none; }
+.btn.primary{
+  background: var(--accent);
+  color:#fff; border:0;
+  padding:12px 18px;
+  border-radius:12px;
+  font-weight:700;
+  font-size:16px;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  letter-spacing:.2px;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.30);
+  transition: transform .15s ease;
+}
+.btn.primary:hover {
+  background: inherit; /* keep same background as normal state */
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+.btn, .btn:link, .btn:visited, .btn:hover, .btn:focus,
+.actions a, .actions a:link, .actions a:visited{ text-decoration: none; }
+
+/* ==========================================================================
+   Contact
+   ========================================================================== */
+
+#contact h2{
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 700;
+  text-align: center;
+  margin: 0;
+  padding-top: 50px;
+  letter-spacing: -0.02em;
+}
+#contact h2::after{
+  content:"";
+  display:block;
+  width:60px;
+  height:3px;
+  background: var(--accent);
+  margin: 4px auto 0;
+  border-radius:2px;
+}
+#contact p {
+  margin-top: 30px;
+}
+.contact{ padding:40px 0 140px; }
+.contact-inner{ text-align:center; max-width:720px; margin:0 auto; }
+.contact .cta,
+.contact .cta:hover{
+  position:relative; font-size:18px; padding:12px 20px; border-radius:14px;
+  background: var(--accent); color:#fff; border:0;
+}
+.contact .cta::before{
+  content:""; position:absolute; inset:-10px; border-radius:20px;
+  background: radial-gradient(60% 60% at 50% 50%, var(--ring), transparent 70%);
+  filter: blur(8px); opacity:.6; z-index:-1;
+}
+
+/* ==========================================================================
+   Reveal animations
+   ========================================================================== */
+
+.reveal{
+  opacity:0;
+  transform: translateY(18px) scale(.985);
+  transition: opacity .6s ease, transform .6s cubic-bezier(.2,.8,.2,1);
+}
+.reveal.is-visible{ opacity:1; transform:none; }
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+.site-footer{ padding:20px 0; color:var(--muted); }
