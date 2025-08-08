@@ -406,3 +406,109 @@ body{
    ========================================================================== */
 
 .site-footer{ padding:20px 0; color:var(--muted); }
+
+/* ========== Responsiveness ========== */
+
+/* Slightly tighter hero/nav on narrow screens */
+@media (max-width: 820px) {
+  .site-header .wrap { height: 56px; }
+  .nav { gap: 14px; }
+  .hero { padding: 12vh 0 10vh; }
+}
+
+/* Phones */
+@media (max-width: 600px) {
+
+  /* Safer side padding (handles iOS safe area too) */
+  .wrap { padding-inline: max(16px, env(safe-area-inset-left)); }
+
+  /* Hero text sizes already clamp, just tighten spacing */
+  .hero h1 { margin-bottom: 8px; }
+  .subtitle { margin-bottom: 20px; }
+
+  /* Card: tighter padding and larger radius looks more native */
+  .apps-grid { gap: 28px; margin-top: 44px; }
+  .apps-grid .card { padding: 16px; border-radius: 22px; }
+
+  /* Header row: allow wrapping and keep things aligned */
+  .card-head {
+    align-items: flex-start;
+    gap: 12px;
+    flex-wrap: wrap;           /* let the button drop to its own line */
+    padding-right: 0;
+  }
+
+  /* App icon smaller and rounder on mobile */
+  .icon {
+    width: 64px; height: 64px;
+    border-radius: 26%;
+    flex: 0 0 64px;
+  }
+
+  /* Title/tagline sizing + tighter spacing */
+  .card h3 {
+    font-size: 22px;
+    line-height: 1.15;
+    margin: 2px 0 2px;
+  }
+  .card p {
+    font-size: 15px;
+    margin: 0;                 /* reduce gap under title */
+  }
+
+  /* Actions: move under the text and center on phones */
+  .card .actions {
+    order: 3;                  /* after icon + text */
+    width: 100%;
+    margin: 10px 0 0;
+    justify-content: center;
+  }
+
+  /* Button: keep label on one line and comfy tap target */
+  .card .btn.primary {
+    font-size: 15px;
+    padding: 12px 16px;
+    border-radius: 14px;
+    white-space: nowrap;       /* prevents the tall, wrapped button */
+  }
+
+  /* Screenshot strip: smaller tiles, tighter gap */
+  .screens {
+    gap: 10px;
+    margin-top: 14px;
+  }
+  .shot {
+    /* Show 1.25–1.5 screenshots on a phone; adjust to taste */
+    flex-basis: min(72vw, 220px);
+    border-radius: 16px;
+  }
+
+  /* Card hover should not move things around on touch */
+  .apps-grid .card:hover {
+    transform: none;
+    box-shadow: 0 14px 34px -16px var(--glow);
+  }
+}
+
+/* Tiny phones */
+@media (max-width: 380px) {
+  .icon { width:58px; height:58px; }
+  .card h3 { font-size: 20px; }
+  .card .btn.primary { font-size: 14px; padding: 10px 14px; }
+  .shot { flex-basis: min(78vw, 210px); }
+}
+
+/* Perf: calm down the heavy hero blur on mobile */
+@media (max-width: 600px) {
+  .hero::before { filter: blur(90px) saturate(140%); opacity: 0.75; }
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .hero::before,
+  .hero { animation: none !important; }
+  .reveal {
+    opacity: 1 !important; transform: none !important;
+    transition: none !important;
+  }
+}
