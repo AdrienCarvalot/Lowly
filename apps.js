@@ -68,3 +68,26 @@ const APPS = [
     ]
   }
 ];
+
+function rearrangeCardActions() {
+  document.querySelectorAll('.card').forEach(card => {
+    const screens = card.querySelector('.screens');
+    const actions = card.querySelector('.actions');
+
+    if (window.innerWidth <= 600) {
+      // move actions after screenshots
+      if (screens && actions && screens.nextSibling !== actions) {
+        screens.after(actions);
+      }
+    } else {
+      // move actions back to header on desktop
+      const head = card.querySelector('.card-head');
+      if (head && actions && head.nextSibling !== actions) {
+        head.appendChild(actions);
+      }
+    }
+  });
+}
+
+window.addEventListener('resize', rearrangeCardActions);
+window.addEventListener('load', rearrangeCardActions);
