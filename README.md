@@ -2,7 +2,7 @@
 
 Copyright © 2025 Lowly Apps. All rights reserved.
 
-This website and its contents are the intellectual property of Adrien Carvalot.
+This website and its contents are the intellectual property of Lowly Apps.
 You may view this site through its public URL, but you may not copy, modify,
 distribute, or reproduce any part of it without prior written permission.
 
