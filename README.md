@@ -1,8 +1,10 @@
 # Lowly Apps
 
-## License
+Copyright © 2025 Adrien Carvalot. All rights reserved.
 
-ISC License - see LICENSE file for details.
+This website and its contents are the intellectual property of Adrien Carvalot.
+You may view this site through its public URL, but you may not copy, modify,
+distribute, or reproduce any part of it without prior written permission.
 
 ## Contact
 
