@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tracky: Simple Budget Planner — Private Envelope Budgeting App for iPhone & iPad</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/appicon.png">
+    <link rel="apple-touch-icon" href="assets/appicon.png">
+    
+    <!-- SEO & Metadata -->
+    <meta name="description" content="Tracky is a privacy-first budget planner for iPhone. Manual envelope budgeting with no bank connections, plus iCloud sync and iOS widgets.">
+    <meta name="theme-color" content="#ff9f0a">
+    <meta name="apple-itunes-app" content="app-id=1663043762">
+
+    <!-- Open Graph / Social -->
+    <meta property="og:title" content="Tracky: Simple Budget Planner — Private Envelope Budgeting for iOS">
+    <meta property="og:description" content="Privacy-first manual envelope budgeting for iPhone. No bank connections. iCloud sync and widgets.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/appicon.png">
+    <meta property="og:image:width" content="1024">
+    <meta property="og:image:height" content="1024">
+    <meta name="twitter:card" content="summary">
+    
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MobileApplication",
+      "name": "Tracky: Simple Budget Planner",
+      "operatingSystem": "iOS 14.0+",
+      "applicationCategory": "FinanceApplication",
+      "publisher": {
+        "@type": "Person",
+        "name": "Adrien Carvalot"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": 4.7,
+        "reviewCount": 735
+      },
+      "description": "Tracky: Simple Budget Planner is a simple, fast, privacy-first budget tracker for iPhone and iPad. Track budgets manually with the envelope method, with no bank connections required.",
+      "downloadUrl": "https://apps.apple.com/us/app/tracky-simple-budget-planner/id1663043762",
+      "featureList": [
+        "Envelope budgeting",
+        "Budget summaries",
+        "No bank connections required",
+        "No account required",
+        "iCloud sync (CloudKit)",
+        "Home Screen and Lock Screen widgets",
+        "Budget summaries and spending history"
+      ]
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "What is the best simple budgeting app for iPhone?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tracky is a best-in-class simple budgeting app for iPhone users who want a manual, envelope-style tracker without connecting bank accounts."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Is there a budgeting app that doesn't link to bank accounts?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Tracky is a privacy-first budgeting app that does not require or support bank account linking. Data stays on your device and can sync via iCloud."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Does Tracky have a subscription?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tracky is free to start, with an optional one-time Pro upgrade or subscription for power users."
+        }
+      }, {
+        "@type": "Question",
+        "name": "How does Tracky sync across devices?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tracky uses Apple's iCloud to sync budgets across iPhone, iPad, and Mac without using third-party servers."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Does Tracky work offline?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Tracky works on-device for manual budgeting. iCloud sync is optional if you want your budgets across multiple devices."
+        }
+      }]
+    }
+    </script>
+</head>
+<body id="top">
+
+    <header class="glass-header">
+        <nav class="container nav-flex">
+            <a href="#top" class="logo">
+                <img src="assets/appicon.png" width="32" height="32" alt="Tracky app icon">
+                <span>Tracky</span>
+            </a>
+            <div class="nav-links">
+                <a href="#screenshots">Screenshots</a>
+                <a href="#features">Features</a>
+                <a href="#faq">FAQ</a>
+                <a href="#contact">Contact</a>
+                <a href="https://apps.apple.com/us/app/tracky-simple-budget-planner/id1663043762" class="ios-btn-sm">Download App</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero mesh-gradient">
+            <div class="container hero-content">
+                <div class="hero-copy animate-in">
+                    <span class="badge">Simple envelope budgeting</span>
+                    <h1>Budgeting that feels <span class="text-gradient">cozy</span>.</h1>
+                    <p>A fast and private envelope budget planner for iPhone & iPad, designed for manual budgeting without bank connections, with iCloud sync and widgets.</p>
+                    <div class="hero-meta" aria-label="App Store rating">
+                        <span class="rating-pill"><strong>4.7</strong><span class="rating-star" aria-hidden="true">★</span><span class="sr-only">stars</span><span class="rating-source">App Store rating</span></span>
+                    </div>
+                    <div class="hero-btns">
+                        <a href="https://apps.apple.com/us/app/tracky-simple-budget-planner/id1663043762" class="appstore-badge">
+                            <img src="assets/download_black.svg" width="180" height="60" alt="Download on the App Store">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-visual animate-in">
+                    <div class="device-stack" aria-hidden="true">
+                        <img src="assets/deepblue_background.png" width="529" height="1080" loading="lazy" decoding="async" class="device-img device-img--back" alt="">
+                        <img src="assets/cosmic_foreground.png" width="529" height="1080" fetchpriority="high" decoding="async" class="device-img device-img--front" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="screenshots" class="screenshots container">
+            <div class="section-header reveal">
+                <h2>A look inside Tracky</h2>
+                <p>Budgets, summaries, spending history, and widgets — everything you need to manage your personal budget easily on iPhone.</p>
+            </div>
+
+            <div class="screenshots-card section-card reveal">
+                <div class="shot-scroller" role="list" aria-label="Tracky App Store screenshots">
+                    <figure class="shot" role="listitem">
+                        <img src="assets/1.jpg" width="603" height="1304" loading="lazy" decoding="async" alt="Track your budgets.">
+                    </figure>
+                    <figure class="shot" role="listitem">
+                        <img src="assets/2.jpg" width="603" height="1304" loading="lazy" decoding="async" alt="Get detailed summaries.">
+                    </figure>
+                    <figure class="shot" role="listitem">
+                        <img src="assets/3.jpg" width="603" height="1304" loading="lazy" decoding="async" alt="See all your expenses.">
+                    </figure>
+                    <figure class="shot" role="listitem">
+                        <img src="assets/4.jpg" width="603" height="1304" loading="lazy" decoding="async" alt="History of your budgets.">
+                    </figure>
+                    <figure class="shot" role="listitem">
+                        <img src="assets/5.jpg" width="603" height="1304" loading="lazy" decoding="async" alt="Add new expenses easily.">
+                    </figure>
+                    <figure class="shot" role="listitem">
+                        <img src="assets/6.jpg" width="603" height="1304" loading="lazy" decoding="async" alt="Widgets on the Home Screen.">
+                    </figure>
+                    <figure class="shot" role="listitem">
+                        <img src="assets/7.jpg" width="603" height="1304" loading="lazy" decoding="async" alt="Lock Screen widgets.">
+                    </figure>
+                    <figure class="shot" role="listitem">
+                        <img src="assets/8.jpg" width="603" height="1304" loading="lazy" decoding="async" alt="Light mode available.">
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section class="comparison container">
+            <div class="section-header reveal">
+                <h2>Tracky compared to other budgeting apps</h2>
+                <p>Easy envelope budgeting on iPhone and iPad with iCloud sync and widgets, without linking your bank accounts.</p>
+            </div>
+            <div class="card-wrapper lift-card reveal">
+                <div class="table-inner section-card">
+                    <table>
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th class="active-col">Tracky</th>
+                            <th>Other budgeting apps</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Bank Connections</td>
+                            <td class="active-col">No bank connections</td>
+                            <td>Often required</td>
+                        </tr>
+                        <tr>
+                            <td>Account</td>
+                            <td class="active-col">No account required, uses iCloud</td>
+                            <td>Required</td>
+                        </tr>
+                        <tr>
+                            <td>Sync</td>
+                            <td class="active-col">On device & iCloud</td>
+                            <td>Vendor account / servers</td>
+                        </tr>
+                        <tr>
+                            <td>Ease of use</td>
+                            <td class="active-col">Simple, focused on core features</td>
+                            <td>Feature-rich, more complex to use</td>
+                        </tr>
+                        <tr>
+                            <td>Pricing Model</td>
+                            <td class="active-col">Free to start, then subscription or one-time upgrade</td>
+                            <td>Subscription</td>
+                        </tr>
+                    </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features container">
+            <div class="section-header reveal">
+                <h2>Calm budgeting, your way</h2>
+                <p>Tracky keeps things simple: envelopes, budgets, summaries, and privacy by design.</p>
+            </div>
+            
+            <div class="feature-grid">
+                <div class="feature-card lift-card reveal">
+                    <div class="icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7.5 11V8.2a4.5 4.5 0 0 1 9 0V11" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                            <rect x="6.5" y="11" width="11" height="10" rx="2.5" stroke="currentColor" stroke-width="2" />
+                            <path d="M12 15v3" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <h3>Absolute Privacy</h3>
+                    <p>We never ask for bank credentials. Your financial data stays encrypted on your iPhone, iPad, and iCloud.</p>
+                </div>
+                <div class="feature-card lift-card reveal">
+                    <div class="icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="4" y="7" width="16" height="12" rx="2.5" stroke="currentColor" stroke-width="2" />
+                            <path d="M5 9l7 5 7-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <h3>Envelope Method</h3>
+                    <p>Allocate funds to digital envelopes. Add your expenses and incomes, and track what's left in real time.</p>
+                </div>
+                <div class="feature-card lift-card reveal">
+                    <div class="icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13 2L4 14h7l-1 8 10-14h-7l0-6z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <h3>Spending summaries</h3>
+                    <p>Get an overview of your expenses and financial habits instantly.</p>
+                </div>
+                <div class="feature-card lift-card reveal">
+                    <div class="icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="4" y="4" width="7" height="7" rx="2" stroke="currentColor" stroke-width="2" />
+                            <rect x="13" y="4" width="7" height="7" rx="2" stroke="currentColor" stroke-width="2" />
+                            <rect x="4" y="13" width="7" height="7" rx="2" stroke="currentColor" stroke-width="2" />
+                            <rect x="13" y="13" width="7" height="7" rx="2" stroke="currentColor" stroke-width="2" />
+                        </svg>
+                    </div>
+                    <h3>Widgets</h3>
+                    <p>Stay on track at a glance with Home Screen and Lock Screen widgets.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="faq container">
+            <div class="section-header reveal">
+                <h2>Common Questions</h2>
+            </div>
+            <div class="faq-card section-card reveal">
+                <div class="faq-list">
+                    <details>
+                        <summary>Is Tracky free to use?</summary>
+                        <p>Tracky is free to download and includes a free tier for essential budgeting. You can unlock additional features with an optional one-time Pro upgrade or a subscription.</p>
+                    </details>
+                    <details>
+                        <summary>Does Tracky connect to bank accounts?</summary>
+                        <p>No. Tracky is a manual budget planner — we don't require or support bank connections.</p>
+                    </details>
+                    <details>
+                        <summary>How does iCloud sync work?</summary>
+                        <p>Tracky uses Apple's iCloud to sync your data across your iPhone and iPad. Your budgets never pass through our servers.</p>
+                    </details>
+                    <details>
+                        <summary>Does Tracky work offline?</summary>
+                        <p>Yes. Tracky works fully on-device, so you can use it offline. An internet connection is only needed if you want to sync your data via iCloud across devices.</p>
+                    </details>
+                    <details>
+                        <summary>Does Tracky support widgets?</summary>
+                        <p>Yes. Tracky includes Home Screen and Lock Screen widgets so you can check your budget at a glance.</p>
+                    </details>
+                    <details>
+                        <summary>Is my financial data private?</summary>
+                        <p>Yes. Tracky does not use third-party analytics or trackers, and your data stays on your device and your iCloud account.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta container">
+            <div class="section-header reveal">
+                <h2>Ready to organize your budget?</h2>
+            </div>
+            <div class="cta-inner section-card panel-card reveal">
+                <p class="panel-copy">Download Tracky, a privacy-first, manual envelope budget planner for iPhone — with iCloud sync, widgets, and zero bank connections.</p>
+                <div class="panel-actions">
+                    <a href="https://apps.apple.com/us/app/tracky-simple-budget-planner/id1663043762" class="appstore-badge">
+                        <img src="assets/download_black.svg" width="180" height="60" alt="Download on the App Store">
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact container">
+            <div class="section-header reveal">
+                <h2>Contact</h2>
+            </div>
+            <div class="contact-card section-card panel-card reveal">
+                <p class="panel-copy">Want to reach out or have a question?</p>
+                <div class="panel-actions">
+                    <a href="mailto:contact@lowly.fr" class="contact-btn">Contact us</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="reveal">
+        <div class="container">
+            <p>&copy; 2026 Lowly Apps. All rights reserved.</p>
+            <div class="footer-actions">
+                <button id="copy-link-btn" class="text-link">Copy Website Link</button>
+                <a href="https://apps.apple.com/us/app/tracky-simple-budget-planner/id1663043762" class="text-link">App Store</a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="toast" class="toast">Link copied to clipboard!</div>
+
+    <script src="script.js"></script>
+</body>
+</html>

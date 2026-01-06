@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "copy-vendor": "bash copy_vendor.sh",
-    "dev": "npm run copy-vendor && jekyll serve",
-    "predeploy": "npm run copy-vendor && JEKYLL_ENV=production jekyll build",
+    "dev": "npm run copy-vendor && bundle exec jekyll serve",
+    "predeploy": "npm run copy-vendor && JEKYLL_ENV=production bundle exec jekyll build",
     "deploy": "gh-pages -d _site",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
