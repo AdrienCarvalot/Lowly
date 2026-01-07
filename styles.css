@@ -238,6 +238,15 @@ body{
   transition: transform .3s ease, box-shadow .3s ease, background .3s ease;
 }
 
+.apps-grid .card.is-link{
+  cursor: pointer;
+}
+
+.apps-grid .card.is-link:focus-visible{
+  outline: 3px solid color-mix(in oklab, var(--app-accent) 55%, transparent);
+  outline-offset: 4px;
+}
+
 /* Hover overlay effect */
 .apps-grid .card::after{
   content: "";
@@ -296,6 +305,21 @@ body{
 
 .card h3{ margin:0 0 6px; font-size:20px; letter-spacing:-.01em; }
 .card p{ margin: 2px 0 0; color:var(--muted); }
+.card-link{
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--app-accent);
+  text-decoration: none;
+}
+.card-link:hover,
+.card-link:focus-visible{
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
 
 /* Icon styling */
 .icon{

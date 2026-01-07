@@ -89,6 +89,31 @@
     card.style.background = `color-mix(in oklab, var(--card) 94%, ${baseAccent} 6%)`;
   }
 
+  // Card-level click to open the landing page, without affecting inner links
+  function enableCardLink(card, app) {
+    if (!app.landing) return;
+    card.classList.add('is-link');
+    card.setAttribute('role', 'link');
+    card.setAttribute('tabindex', '0');
+    card.setAttribute('aria-label', `Open ${app.name} details`);
+
+    const navigate = () => {
+      window.location.href = app.landing;
+    };
+
+    card.addEventListener('click', (event) => {
+      if (event.target.closest('a')) return;
+      navigate();
+    });
+
+    card.addEventListener('keydown', (event) => {
+      if (event.key !== 'Enter') return;
+      if (event.target.closest('a')) return;
+      event.preventDefault();
+      navigate();
+    });
+  }
+
   /* --------------------------- Card builder -------------------------- */
   function createCard(app, index) {
     const card = document.createElement('article');
@@ -119,6 +144,14 @@
     tagline.textContent = app.tagline || '';
     titleWrap.appendChild(title);
     titleWrap.appendChild(tagline);
+    if (app.landing) {
+      const landingLink = document.createElement('a');
+      landingLink.className = 'card-link';
+      landingLink.href = app.landing;
+      landingLink.textContent = 'Learn more';
+      landingLink.setAttribute('aria-label', `Learn more about ${app.name}`);
+      titleWrap.appendChild(landingLink);
+    }
 
     // actions (App Store button) — create BEFORE appending to head
     const actions = document.createElement('div');
@@ -153,6 +186,7 @@
 
     // apply accent now that button exists
     applyAccent(card, app, storeBtn);
+    enableCardLink(card, app);
 
     io.observe(card);
     return card;

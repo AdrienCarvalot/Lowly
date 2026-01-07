@@ -4,6 +4,7 @@ const APPS = [
   {
     name: "Tracky — Simple Budget Planner",
     url: "https://apps.apple.com/us/app/tracky-simple-budget-planner/id1663043762",
+    landing: "/tracky/",
     tagline: "Envelope budgeting, reimagined for your phone.",
     icon: "assets/tracky/appicon.png", // (1024px PNG recommended)
     accent: "#EDAA28",
@@ -21,6 +22,7 @@ const APPS = [
   {
     name: "TCG Card Scanner for Lorcana",
     url: "https://apps.apple.com/us/app/tcg-card-scanner-for-lorcana/id6720749819",
+    landing: "/lorcana-scan/",
     tagline: "Scan Lorcana cards, get details instantly, and manage your collection easily.",
     icon: "assets/lorcanaTCG/appicon.png",
     accent: "#5226DE",
