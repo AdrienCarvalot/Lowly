@@ -38,6 +38,7 @@ const APPS = [
   {
     name: "Wally — Create Custom Wallpaper",
     url: "https://apps.apple.com/us/app/wally-create-custom-wallpaper/id6473636677",
+    landing: "/wally/",
     tagline: "Create your own wallpapers in seconds.",
     icon: "assets/wally/appicon.png",
     accent: ["#8900C9", "#D141D1", "#FC6130", "#FFD749"],
