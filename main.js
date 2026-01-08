@@ -3,7 +3,11 @@
   /* ------------------------- Theme setup ------------------------- */
   const root = document.documentElement;
   const stored = localStorage.getItem('lowly-theme');
-  root.setAttribute('data-theme', stored === 'dark' ? 'dark' : 'light');
+  const systemPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const initialTheme = stored === 'dark' || stored === 'light'
+    ? stored
+    : (systemPrefersDark ? 'dark' : 'light');
+  root.setAttribute('data-theme', initialTheme);
 
   const toggleBtn = document.getElementById('theme-toggle');
   if (toggleBtn) {

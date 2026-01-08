@@ -1,3 +1,22 @@
+// 0. Theme toggle (system default)
+const root = document.documentElement;
+const themeToggle = document.getElementById('theme-toggle');
+const storedTheme = localStorage.getItem('lowly-theme');
+const systemPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+const initialTheme = storedTheme === 'dark' || storedTheme === 'light'
+    ? storedTheme
+    : (systemPrefersDark ? 'dark' : 'light');
+
+root.setAttribute('data-theme', initialTheme);
+
+if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+        const nextTheme = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', nextTheme);
+        localStorage.setItem('lowly-theme', nextTheme);
+    });
+}
+
 // 1. Smooth Scroll for Navigation Links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
