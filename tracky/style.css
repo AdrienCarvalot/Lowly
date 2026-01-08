@@ -6,8 +6,8 @@
     --accent: #ff9f0a;
     --accent-2: #ffd60a;
     --accent-gradient: linear-gradient(135deg, #FFD60A 0%, #FF9F0A 55%, #FF6A00 100%);
-    --glow: rgba(255, 159, 10, 0.20);
-    --glow-2: rgba(255, 214, 10, 0.16);
+    --glow: rgba(255, 159, 10, 0.15);
+    --glow-2: rgba(255, 214, 10, 0.10);
     --border: rgba(29, 29, 31, 0.12);
     --card-bg: rgba(255, 255, 255, 0.78);
     --section-pad: 80px;

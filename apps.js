@@ -55,7 +55,7 @@ const APPS = [
     ]
   },
   {
-    name: "Card Value Scanner for TCG",
+    name: "Poke Card Value Scanner TCG",
     url: "https://apps.apple.com/us/app/card-value-scanner-for-tcg/id6741767342",
     tagline: "Scan Pokémon cards, check values, and grow your collection.",
     icon: "assets/pokeTCG/appicon.png",
