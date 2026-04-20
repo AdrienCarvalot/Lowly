@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One Piece Card Scanner &amp; Price Tracker for iPhone &mdash; OP TCG Card Value Scanner</title>
+
+    <link rel="canonical" href="https://lowly.fr/op-scan/">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="../assets/opTCG/appicon.png">
+    <link rel="apple-touch-icon" href="../assets/opTCG/appicon.png">
+
+    <!-- SEO & Metadata -->
+    <meta name="description" content="Scan One Piece cards on iPhone and instantly see market price, set, rarity, and more. Track collection value, manage a wishlist, and keep scan history.">
+    <meta name="theme-color" content="#0045A9">
+    <meta name="apple-itunes-app" content="app-id=6761257195">
+
+    <!-- Open Graph / Social -->
+    <meta property="og:title" content="One Piece Card Scanner &amp; Price Tracker for iPhone">
+    <meta property="og:description" content="Scan One Piece cards on iPhone and instantly see market price, set, rarity, and more. Track collection value, manage a wishlist, and keep scan history.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="../assets/opTCG/appicon.png">
+    <meta property="og:image:width" content="1024">
+    <meta property="og:image:height" content="1024">
+    <meta name="twitter:card" content="summary">
+
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MobileApplication",
+      "name": "OP TCG Card Value Scanner",
+      "operatingSystem": "iOS",
+      "applicationCategory": "Reference",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Lowly Apps",
+        "url": "https://www.lowly.fr",
+        "logo": "https://www.lowly.fr/assets/opTCG/appicon.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": 4.7,
+        "reviewCount": 100
+      },
+      "description": "Fast, unofficial One Piece card scanner for iPhone. Scan cards to see market prices and card details in seconds with no sign-up required.",
+      "downloadUrl": "https://apps.apple.com/us/app/op-tcg-card-value-scanner/id6761257195",
+      "featureList": [
+        "Instant card scanning",
+        "Market price and value trends",
+        "Full card details: set, edition, rarity",
+        "Collection tracker with total value",
+        "Wishlist to track chase cards",
+        "Scan history",
+        "Browse sets and open full card lists",
+        "Search cards by name, number, and more",
+        "Bulk scan"
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "What is the best One Piece card scanner for iPhone?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "OP TCG Card Value Scanner is a fast iPhone app to scan One Piece cards, see market prices, and manage your collection value."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Does it show card prices or market value?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Each scan shows market price and card value, plus details like set, edition, and rarity."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Do I need an account?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. No sign-up or login is required to scan cards and track your collection."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Can I track my collection value?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Add cards to your collection and see your total value with scan history."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Can I build a wishlist?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Save cards to a wishlist so you can keep track of what you are chasing."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Can I browse all One Piece cards?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Browse the full card database, open a set, and search by name, number, rarity, and more."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Can I search for cards?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Search by name, number, and more."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Is this app official?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. This is an unofficial fan-made app and is not affiliated with Bandai, Shueisha, Toei Animation, or any One Piece rights holder."
+        }
+      }]
+    }
+    </script>
+</head>
+<body id="top">
+
+    <header class="glass-header">
+        <nav class="container nav-flex">
+            <a href="#top" class="logo">
+                <img src="../assets/opTCG/appicon.png" width="32" height="32" alt="OP TCG card scanner app icon">
+                <span>OP Scan</span>
+            </a>
+            <div class="nav-links">
+                <a href="#screenshots">Screenshots</a>
+                <a href="#features">Features</a>
+                <a href="#how">How it works</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#faq">FAQ</a>
+                <a href="#contact">Contact</a>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle theme">
+                    <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+                        <circle cx="12" cy="12" r="4" fill="currentColor"/>
+                        <g stroke="currentColor" stroke-linecap="round" stroke-width="2" fill="none">
+                            <path d="M12 2v2M12 20v2M4 12H2M22 12h-2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+                        </g>
+                    </svg>
+                    <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                    </svg>
+                </button>
+                <a href="https://apps.apple.com/us/app/op-tcg-card-value-scanner/id6761257195" class="ios-btn-sm">Download App</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero mesh-gradient">
+            <div class="container hero-content">
+                <div class="hero-copy animate-in">
+                    <span class="badge">One Piece card scanner</span>
+                    <h1>Scan One Piece cards. Track prices. Build your <span class="text-gradient">collection</span>.</h1>
+                    <p>Fast, unofficial One Piece card scanner for iPhone. See market prices and card value in seconds, with no account or sign-up required.</p>
+                    <div class="hero-meta" aria-label="App Store rating">
+                        <span class="rating-pill"><strong>4.7</strong><span class="rating-star" aria-hidden="true">&#9733;</span><span class="sr-only">stars</span><span class="rating-source">100+ ratings</span></span>
+                    </div>
+                    <div class="hero-btns">
+                        <a href="https://apps.apple.com/us/app/op-tcg-card-value-scanner/id6761257195" class="appstore-badge">
+                            <img class="appstore-badge__img appstore-badge__img--light" src="../assets/img/download_black.svg" width="180" height="60" alt="Download on the App Store">
+                            <img class="appstore-badge__img appstore-badge__img--dark" src="../assets/img/download_white.svg" width="180" height="60" alt="Download on the App Store">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-visual animate-in">
+                    <div class="device-stack" aria-hidden="true">
+                        <img src="../assets/opTCG/deepblue_background.png" width="1080" height="2208" loading="lazy" decoding="async" class="device-img device-img--back" alt="">
+                        <img src="../assets/opTCG/deepblue_foreground.png" width="1080" height="2208" fetchpriority="high" decoding="async" class="device-img device-img--front" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="screenshots" class="screenshots container">
+            <div class="section-header reveal">
+                <h2>See the One Piece card scanner in action</h2>
+                <p>Scan One Piece cards, check market prices, and manage your collection in seconds.</p>
+            </div>
+
+            <div class="screenshots-card section-card reveal">
+                <div class="shot-scroller" role="list" aria-label="One Piece card scanner screenshots">
+                    <figure class="shot" role="listitem">
+                        <img src="../assets/opTCG/1.jpg" width="603" height="1304" loading="lazy" decoding="async" alt="Scan One Piece cards with camera.">
+                    </figure>
+                    <figure class="shot" role="listitem">
+                        <img src="../assets/opTCG/2.jpg" width="603" height="1304" loading="lazy" decoding="async" alt="One Piece card price and rarity details.">
+                    </figure>
+                    <figure class="shot" role="listitem">
+                        <img src="../assets/opTCG/3.jpg" width="603" height="1304" loading="lazy" decoding="async" alt="Track total One Piece collection value.">
+                    </figure>
+                    <figure class="shot" role="listitem">
+                        <img src="../assets/opTCG/4.jpg" width="603" height="1304" loading="lazy" decoding="async" alt="Browse One Piece sets and cards.">
+                    </figure>
+                    <figure class="shot" role="listitem">
+                        <img src="../assets/opTCG/5.jpg" width="603" height="1304" loading="lazy" decoding="async" alt="View scan history and collection list.">
+                    </figure>
+                    <figure class="shot" role="listitem">
+                        <img src="../assets/opTCG/6.jpg" width="603" height="1304" loading="lazy" decoding="async" alt="Bulk scan One Piece cards.">
+                    </figure>
+                    <figure class="shot" role="listitem">
+                        <img src="../assets/opTCG/7.jpg" width="603" height="1304" loading="lazy" decoding="async" alt="Track wanted cards in your wishlist.">
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features container">
+            <div class="section-header reveal">
+                <h2>Everything you need, right in your pocket</h2>
+                <p>Scan One Piece cards, check market value, and manage your collection and wishlist with no account or login required.</p>
+            </div>
+
+            <div class="feature-grid">
+                <div class="feature-card lift-card reveal">
+                    <div class="icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 8V5h3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M20 8V5h-3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M4 16v3h3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M20 16v3h-3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <h3>Instant card scanning</h3>
+                    <p>Scan single cards or bulk scan a batch in seconds with your iPhone camera.</p>
+                </div>
+                <div class="feature-card lift-card reveal">
+                    <div class="icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 16l5-5 4 4 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M14 7h7v7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <h3>Market prices</h3>
+                    <p>See market price and card value at a glance for every card you scan.</p>
+                </div>
+                <div class="feature-card lift-card reveal">
+                    <div class="icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 7h.01M11 11h1v6" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                            <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2" />
+                        </svg>
+                    </div>
+                    <h3>Full card details</h3>
+                    <p>Check set, rarity, number, and other key details for every card.</p>
+                </div>
+                <div class="feature-card lift-card reveal">
+                    <div class="icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="4" y="5" width="16" height="14" rx="3" stroke="currentColor" stroke-width="2" />
+                            <path d="M8 9h8M8 13h5" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <h3>Collection tracker</h3>
+                    <p>Add cards to your collection and track total value as it grows.</p>
+                </div>
+                <div class="feature-card lift-card reveal">
+                    <div class="icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 8.5c0 4.5-8 9-8 9s-8-4.5-8-9a4.5 4.5 0 0 1 8-2.5A4.5 4.5 0 0 1 20 8.5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <h3>Wishlist</h3>
+                    <p>Save cards you are chasing and track them separately from your collection.</p>
+                </div>
+                <div class="feature-card lift-card reveal">
+                    <div class="icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 7v6l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2" />
+                        </svg>
+                    </div>
+                    <h3>Scan history</h3>
+                    <p>Keep a tidy scan history so you can review what you scanned anytime.</p>
+                </div>
+                <div class="feature-card lift-card reveal">
+                    <div class="icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 6h16M4 12h16M4 18h10" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <h3>Browse sets</h3>
+                    <p>Browse sets, tap one, and view every card in that release.</p>
+                </div>
+                <div class="feature-card lift-card reveal">
+                    <div class="icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="11" cy="11" r="6" stroke="currentColor" stroke-width="2" />
+                            <path d="M16 16l4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <h3>Search cards</h3>
+                    <p>Search any card by name, number, and more.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="how" class="how container">
+            <div class="section-header reveal">
+                <h2>How the One Piece card scanner works</h2>
+                <p>From scan to collection value in seconds.</p>
+            </div>
+            <div class="steps-card section-card reveal">
+                <ol class="steps">
+                    <li>Open the app and tap Scan.</li>
+                    <li>Point your camera at a One Piece card.</li>
+                    <li>See market price, set, rarity, and card details.</li>
+                    <li>Add the card to your collection or wishlist.</li>
+                    <li>Review your collection value and scan history.</li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="pricing" class="pricing container">
+            <div class="section-header reveal">
+                <h2>Free to start, premium when you need it</h2>
+                <p>Download free. Upgrade for unlimited scans, unlimited cards, and extra power features.</p>
+            </div>
+            <div class="pricing-card section-card reveal">
+                <div class="pricing-cols">
+                    <div class="price-block">
+                        <h3>Free</h3>
+                        <p>Get started with scanning, prices, and collection basics.</p>
+                        <ul>
+                            <li>Scan cards</li>
+                            <li>See market prices and card value</li>
+                            <li>Build a starter collection</li>
+                        </ul>
+                    </div>
+                    <div class="price-block highlight">
+                        <h3>Premium</h3>
+                        <p>Unlock power features for serious collectors.</p>
+                        <ul>
+                            <li>Unlimited scans</li>
+                            <li>Unlimited cards in your collection</li>
+                            <li>Ad-free experience</li>
+                        </ul>
+                        <p class="price-note">Optional premium upgrade.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="faq container">
+            <div class="section-header reveal">
+                <h2>Common Questions</h2>
+            </div>
+            <div class="faq-card section-card reveal">
+                <div class="faq-list">
+                    <details>
+                        <summary>What is the best One Piece card scanner for iPhone?</summary>
+                        <p>OP TCG Card Value Scanner is a fast iPhone app to scan One Piece cards, see market prices, and manage your collection value.</p>
+                    </details>
+                    <details>
+                        <summary>Does it show card prices or market value?</summary>
+                        <p>Yes. Each scan shows market price and card value, plus details like set, edition, and rarity.</p>
+                    </details>
+                    <details>
+                        <summary>Do I need an account?</summary>
+                        <p>No. No sign-up or login is required to scan cards and track your collection.</p>
+                    </details>
+                    <details>
+                        <summary>Can I track my collection value?</summary>
+                        <p>Yes. Add cards to your collection and see your total value with scan history.</p>
+                    </details>
+                    <details>
+                        <summary>Can I build a wishlist?</summary>
+                        <p>Yes. Save cards to a wishlist so you can keep track of what you are chasing.</p>
+                    </details>
+                    <details>
+                        <summary>Can I browse all One Piece cards?</summary>
+                        <p>Yes. Browse the full card database, open a set, and search by name, number, rarity, and more.</p>
+                    </details>
+                    <details>
+                        <summary>Can I search for cards?</summary>
+                        <p>Yes. Search by name, number, and more.</p>
+                    </details>
+                    <details>
+                        <summary>Is this app official?</summary>
+                        <p>No. This is an unofficial fan-made app and is not affiliated with Bandai, Shueisha, Toei Animation, or any One Piece rights holder.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta container">
+            <div class="section-header reveal">
+                <h2>Want to start tracking your collection?</h2>
+            </div>
+            <div class="cta-inner section-card panel-card reveal">
+                <p class="panel-copy">Scan One Piece cards, check market prices, and track your collection value in seconds.</p>
+                <div class="panel-actions">
+                    <a href="https://apps.apple.com/us/app/op-tcg-card-value-scanner/id6761257195" class="appstore-badge appstore-badge--flat">
+                        <img class="appstore-badge__img appstore-badge__img--light" src="../assets/img/download_black.svg" width="180" height="60" alt="Download on the App Store">
+                        <img class="appstore-badge__img appstore-badge__img--dark" src="../assets/img/download_white.svg" width="180" height="60" alt="Download on the App Store">
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact container">
+            <div class="section-header reveal">
+                <h2>Contact</h2>
+            </div>
+            <div class="contact-card section-card panel-card reveal">
+                <p class="panel-copy">Want to reach out or have a question?</p>
+                <div class="panel-actions">
+                    <a href="mailto:contact@lowly.fr" class="contact-btn">Contact us</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="disclaimer reveal">
+            <p>Not affiliated with, endorsed by, sponsored by, or in any way officially connected to Bandai, Shueisha, Toei Animation, Eiichiro Oda, or any One Piece rights holder. One Piece and the One Piece Card Game are trademarks of their respective owners.</p>
+        </section>
+    </main>
+
+    <footer class="reveal">
+        <div class="container">
+            <p>&copy; 2026 Lowly Apps. All rights reserved.</p>
+            <div class="footer-actions">
+                <button id="copy-link-btn" class="text-link">Copy Website Link</button>
+                <a href="https://lowly.fr/" class="text-link">All apps</a>
+                <a href="https://apps.apple.com/us/app/op-tcg-card-value-scanner/id6761257195" class="text-link">App Store</a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="toast" class="toast">Link copied to clipboard!</div>
+
+    <script src="../landing.js"></script>
+</body>
+</html>

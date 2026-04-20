@@ -36,6 +36,23 @@ const APPS = [
     ]
   },
   {
+    name: "OP TCG Card Value Scanner",
+    url: "https://apps.apple.com/us/app/op-tcg-card-value-scanner/id6761257195",
+    landing: "/op-scan/",
+    tagline: "Scan One Piece cards, track values, and build your collection.",
+    icon: "assets/opTCG/appicon.png",
+    accent: "#0045A9",
+    screenshots: [
+      "assets/opTCG/1.jpg",
+      "assets/opTCG/2.jpg",
+      "assets/opTCG/3.jpg",
+      "assets/opTCG/4.jpg",
+      "assets/opTCG/5.jpg",
+      "assets/opTCG/6.jpg",
+      "assets/opTCG/7.jpg"
+    ]
+  },
+  {
     name: "Wally — Create Custom Wallpaper",
     url: "https://apps.apple.com/us/app/wally-create-custom-wallpaper/id6473636677",
     landing: "/wally/",

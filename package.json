@@ -1,12 +1,10 @@
 {
   "name": "lowly",
   "version": "1.0.0",
-  "description": "Lowly website",
-  "main": "index.js",
+  "description": "Lowly Apps marketing site",
   "scripts": {
-    "copy-vendor": "bash copy_vendor.sh",
-    "dev": "npm run copy-vendor && bundle exec jekyll serve",
-    "predeploy": "npm run copy-vendor && JEKYLL_ENV=production bundle exec jekyll build",
+    "dev": "bundle exec jekyll serve",
+    "predeploy": "JEKYLL_ENV=production bundle exec jekyll build",
     "deploy": "gh-pages -d _site",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -21,9 +19,6 @@
   },
   "homepage": "https://github.com/AdrienCarvalot/Lowly#readme",
   "dependencies": {
-    "bootstrap": "^5.2.3",
-    "gh-pages": "^4.0.0",
-    "jquery": "^3.6.3",
-    "popper.js": "^1.16.1"
+    "gh-pages": "^4.0.0"
   }
 }
